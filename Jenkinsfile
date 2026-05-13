@@ -32,7 +32,6 @@ pipeline {
                 bat 'npm audit || exit /b 0'
             }
         }
-post{
         stage('Send Email Notification') {
             steps {
                 emailext (
@@ -42,7 +41,7 @@ post{
                     attachLog: true
                 )
             }
-        }
+        
     }
     }
 
